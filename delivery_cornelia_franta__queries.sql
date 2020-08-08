@@ -28,4 +28,8 @@ SELECT COUNT(*) FROM orders LEFT JOIN senders ON orders.senderId = senders.ID
 LEFT JOIN locations ON senders.location = locations.ID 
 WHERE locations.postalCode = "2002"
 
+-- Show all orders send on a specific date by a specific sender
+SELECT orders.senderId FROM orders WHERE orders.senderId = 1 AND orders.sendDate = DATE("2020-08-10")
+
+
 
