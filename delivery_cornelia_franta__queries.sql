@@ -31,5 +31,8 @@ WHERE locations.postalCode = "2002"
 -- Show all orders send on a specific date by a specific sender
 SELECT orders.senderId FROM orders WHERE orders.senderId = 1 AND orders.sendDate = DATE("2020-08-10")
 
+--Show how send packages /mail on a specific Date
+SELECT orders.senderId FROM orders WHERE  orders.sendDate = DATE("2020-08-10")
+
 
 
