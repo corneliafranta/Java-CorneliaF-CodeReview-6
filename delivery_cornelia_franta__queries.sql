@@ -34,5 +34,10 @@ SELECT orders.senderId FROM orders WHERE orders.senderId = 1 AND orders.sendDate
 --Show how send packages /mail on a specific Date
 SELECT orders.senderId FROM orders WHERE  orders.sendDate = DATE("2020-08-10")
 
-
+-- Show trackingstatus and price send by a specific sender with a specific shipping option
+SELECT orders.senderId, trackingstatus.status, tarifs.price FROM trackingstatus 
+LEFT JOIN trackingnumbers ON trackingstatus.internalNum = trackingnumbers.internalNum 
+LEFT JOIN orders ON trackingnumbers.orderId = orders.id 
+LEFT JOIN tarifs ON orders.tarif = tarifs.ID 
+WHERE orders.senderId = 3 AND tarifs.shippingOption = 3
 
